@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "1234";
-$dbname = "ProjectSswd";
+$dbname = "project_testing";
 $port = 3306;
 
 // Create connection
