@@ -11,11 +11,12 @@ $result = mysqli_query($conn,$sql);
 if ($result && $result ->num_rows > 0) { 
     $row = mysqli_fetch_assoc ($result);
 
-if (($formUser==$row['username']) && ($formPwd==['password'])) {
+if (($formUser==$row['username']) && ($formPwd==$row['password'])) {
 $_SESSION ['username' ]=$formUser; 
 header ('Location: loggedIn.php');
-}
-else {
+exit;
+
+}else {
     echo "username and password do not match!";
 }
 }
