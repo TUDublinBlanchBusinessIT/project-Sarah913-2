@@ -10,7 +10,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname, $port);
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
-$sql= "INSERT INTO MyTable (firstname,lastname,email) VALUES ('JOHH', 'DOE', 'john@example.com')";
+$sql= "INSERT INTO MyTable (firstname,lastname,email) VALUES ('JOHN', 'DOE', 'john@example.com')";
 
 if (mysqli_query($conn, $sql)){
   echo "New record has been added!";
@@ -29,5 +29,5 @@ if (mysqli_num_rows($result)>0){
     echo "0 results found";
   }
 
-mysqli_close($conn);
+
 ?>
