@@ -1,12 +1,12 @@
 <?php
 include("dbcon.php");
 
-$sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
+$sql = "UPDATE MyTable SET lastname='Doe' WHERE id=2";
 
-if ($conn->query($sql) === TRUE) {
+if (mysqli_query($conn,$sql)) {
   echo "Record updated successfully";
 } else {
-  echo "Error updating record: " . $conn->error;
+  echo "Error updating record: " . mysqli_error($conn);
 }
 
 $conn->close();
