@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "1234";
-$dbname = "project_testing";
+$dbname = "ocean";
 $port = 3306;
 
 $conn = mysqli_connect($servername, $username, $password, $dbname, $port);

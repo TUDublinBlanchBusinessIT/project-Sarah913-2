@@ -5,7 +5,7 @@ include("dbcon.php");
 $formUser = $_POST['usr']?? null;
 $formPwd = $_POST['pwd']?? null;
 
-$sql = "SELECT username,password from user where username= '$formUser' ";
+$sql = "SELECT username,password FROM users WHERE username= '$formUser' ";
 $result = mysqli_query($conn,$sql);
 
 if ($result && $result ->num_rows > 0) { 
@@ -13,7 +13,7 @@ if ($result && $result ->num_rows > 0) {
 
 if (($formUser==$row['username']) && ($formPwd==$row['password'])) {
 $_SESSION ['username' ]=$formUser; 
-header ('Location: loggedIn.php');
+header ('Location: selectionProcess.php');
 exit;
 
 }else {
