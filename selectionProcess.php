@@ -24,7 +24,7 @@ $result = mysqli_query($conn, $sql);
 echo "<TABLE>";
 while($row = mysqli_fetch_assoc($result)) {
     $usr = $row ['username'];
-    echo "<h1>Welcome back" . $_SESSION['username']. "</h1><br>";
+    echo "<h1>Welcome back " . $_SESSION['username']. "</h1><br>";
     echo "What fish did you catch?";
 
 }
@@ -41,19 +41,23 @@ echo "</TABLE>"
 <body>
     <form action="savedetails.php" method="POST">
     <SELECT name ="fish">
-        <OPTION value="1">Salmon</OPTION>
-        <OPTION value="1">Mackeral</OPTION>
-        <OPTION value="1">Sardine</OPTION>
-        <OPTION value="1">Cod</OPTION>
-        <OPTION value="1">Tuna</OPTION>
-        <OPTION value="1">Prawn</OPTION>
+        <OPTION value="Salmon">Salmon</OPTION>
+        <OPTION value="Mackeral">Mackeral</OPTION>
+        <OPTION value="Sardine">Sardine</OPTION>
+        <OPTION value="Cod">Cod</OPTION>
+        <OPTION value="Tuna">Tuna</OPTION>
+        <OPTION value="Prawn">Prawn</OPTION>
 </SELECT>
 <br><br>
 
 <label>What size fish did you catch?:</label><BR>
 <input class="form-control" id="length" type="range" min="1" max="15" value="50" name="fishlength">
 <br><br>
-<input type="submit" value="Save your choice">
+
+<label>Click the box if you kept the fish</label><br>
+<input type="radio" id="html" name="fav_language" value="HTML"><br><br>
+
+<input type="submit" value="Save your catch"><br><br>
 </form>
 
 
