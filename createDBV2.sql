@@ -7,17 +7,15 @@ CREATE TABLE IF NOT EXISTS users (
 
 );
 
-CREATE TABLE IF NOT EXISTS MyTable (
+CREATE TABLE IF NOT EXISTS Critters (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    firstname VARCHAR(50) NOT NULL UNIQUE,
-    lastname VARCHAR(50) NOT NULL UNIQUE,
-    email VARCHAR(100) NOT NULL UNIQUE
+    fish VARCHAR (20) NOT NULL UNIQUE
 );
 INSERT INTO users (username, password)
 VALUES ('sarah', 'mypass');
 
-INSERT INTO MyTable (firstname, lastname, email)
-VALUES ('Sarah', 'Smith', 'sarah@example.com');
+INSERT INTO Critters (fish)
+VALUES ('Salmon');
 
 
-SELECT * FROM MyTable;
+SELECT * FROM Critters;

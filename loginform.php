@@ -17,11 +17,11 @@ header ('Location: selectionProcess.php');
 exit;
 
 }else {
-    echo "username and password do not match!";
+    echo " The username and password do not match!";
 }
 }
 else {
-    echo "there are no user matching that name";
+    echo "The user you have entered does not exist ";
 }
 
 ?>
