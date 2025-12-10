@@ -9,7 +9,10 @@ CREATE TABLE IF NOT EXISTS users (
 
 CREATE TABLE IF NOT EXISTS Critters (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    fish VARCHAR (20) NOT NULL UNIQUE
+    username VARCHAR(50) NOT NULL,
+    fish VARCHAR (20) NOT NULL,
+    fishlength INT NOT NULL
+    
 );
 INSERT INTO users (username, password)
 VALUES ('sarah', 'mypass');

@@ -17,18 +17,11 @@ else {
     $_SESSION['lastAccessed']=time();
 
 }
-
-$sql = "SELECT username FROM users";
-$result = mysqli_query($conn, $sql);
-
-echo "<TABLE>";
-while($row = mysqli_fetch_assoc($result)) {
-    $usr = $row ['username'];
-    echo "<h1>Welcome back " . $_SESSION['username']. "</h1><br>";
-    echo "What fish did you catch?";
-
+if (!isset($_SESSION['username'])) {
+    header('Location: login.php'); // redirect if not logged in
+    exit;
 }
-echo "</TABLE>"
+
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +32,8 @@ echo "</TABLE>"
     <title>Selctions</title>
 </head>
 <body>
+    <h1>Welcome back <?php echo $_SESSION['username']; ?></h1>
+    <p>What fish did you catch?</p>
     <form action="savedetails.php" method="POST">
     <SELECT name ="fish">
         <OPTION value="Salmon">Salmon</OPTION>
@@ -65,4 +60,3 @@ echo "</TABLE>"
     
 </body>
 </html>
-
