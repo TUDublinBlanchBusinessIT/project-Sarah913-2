@@ -14,6 +14,17 @@ VALUES('$username', '$fish', '$fishlength', '$kept_threw')";
  if (mysqli_query($conn, $sql)) {
     echo '<h1 align="center">Catch has been saved!</h1>';
  }
+$sql = "SELECT fish, fishlength, kept_threw FROM Critters WHERE username = '$username'";
+$result = mysqli_query($conn, $sql);
+
+ if (mysqli_num_rows($result) > 0) {
+        echo "<h2>Your Catch History</h2>";
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "Fish: " . $row["fish"] ." — Length: " . $row["fishlength"] ." — " . $row["kept_threw"] . "<br>";
+        }
+    } else {
+        echo "No catches found.";
+    }
 
 mysqli_close($conn);
 ?>
@@ -25,8 +36,12 @@ mysqli_close($conn);
     <title>Document</title>
 </head>
 <body>
-    <div style="text-align:center;">
+</head>
+<body>
+  <div style="text-align:center;">
     <img src="img1.png" style="height:250px; width:250px">
-</div>
+  </div>
+   
+    
 </body>
 </html>
