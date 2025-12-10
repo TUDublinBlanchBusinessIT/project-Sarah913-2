@@ -49,8 +49,12 @@ if (!isset($_SESSION['username'])) {
 <input class="form-control" id="length" type="range" min="1" max="15" value="50" name="fishlength">
 <br><br>
 
-<label>Click the box if you kept the fish</label><br>
-<input type="radio" id="html" name="fav_language" value="HTML"><br><br>
+<label>Did you keep the fish?</label><br>
+<input type="radio" id="kept" name="kept_threw" value="Kept">
+<label for="kept">Kept</label><br>
+<input type="radio" id="released" name="kept_threw" value="Released">
+<label for="released">Released</label><br><br>
+
 
 <input type="submit" value="Save your catch"><br><br>
 </form>

@@ -2,13 +2,14 @@
 session_start();
 include ('dbcon.php');
 
-$fish = $_POST['fish']?? null;
-$fishlength = $_POST['fishlength']?? null;
-$username = $_SESSION['username']?? null;
+$username = $_SESSION['username'];
+$fish = $_POST['fish'];
+$fishlength = $_POST['fishlength'];
+$kept_threw = $_POST['kept_threw'];
 
 
-$sql = "INSERT INTO Critters (username,fish,fishlength)
-VALUES('$username', '$fish', '$fishlength')";
+$sql = "INSERT INTO Critters (username,fish,fishlength,kept_threw)
+VALUES('$username', '$fish', '$fishlength', '$kept_threw')";
 
  if (mysqli_query($conn, $sql)) {
     echo '<h1 align="center">Catch has been saved!</h1>';

@@ -11,14 +11,14 @@ CREATE TABLE IF NOT EXISTS Critters (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
     fish VARCHAR (20) NOT NULL,
-    fishlength INT NOT NULL
-    
+    fishlength INT NOT NULL,
+    kept_threw VARCHAR (10) NOT NULL
 );
 INSERT INTO users (username, password)
 VALUES ('sarah', 'mypass');
 
-INSERT INTO Critters (fish)
-VALUES ('Salmon');
+INSERT INTO Critters (username,fish,fishlength)
+VALUES ('sarah','Salmon',12);
 
 
 SELECT * FROM Critters;
